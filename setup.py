@@ -8,7 +8,7 @@ from setuptools.command.install import install
 
         
 setup(
-  name = 'discogs',
+  name = 'dbmaster',
   py_modules = ['dbArtistMap', 'masterdb', 'mainDB', 'matchDBArtist', 'masterDBMatchClass', 'parseDBArtistsData'],
   version = '0.0.1',
   data_files = [],
