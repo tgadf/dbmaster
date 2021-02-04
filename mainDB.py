@@ -11,6 +11,19 @@ from dbArtistsAceBootlegs import dbArtistsAceBootlegs
 from dbArtistsCDandLP import dbArtistsCDandLP
 from dbArtistsRateYourMusic import dbArtistsRateYourMusic
 from dbArtistsMusicStack import dbArtistsMusicStack
+from dbArtistsDeezer import dbArtistsDeezer
+
+class musicDBs:
+    def __init__(self):
+        self.dbs = ["Discogs", "AllMusic", "MusicBrainz", "AceBootlegs", "RateYourMusic", "LastFM", "DatPiff", "RockCorner",
+                    "CDandLP", "MusicStack", "MetalStorm", "Deezer", "AppleMusic"]
+    
+    def isValid(self, db):
+        return db in self.dbs
+    
+    def getDBs(self):
+        return self.dbs
+        
 
 
 class mainDB:
@@ -60,23 +73,26 @@ class mainDB:
         dbArtists = dbArtistsLastFM()
         dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
-        dbArtists = dbArtistsRockCorner()
+        dbArtists = dbArtistsRateYourMusic()
         dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+        
+        dbArtists = dbArtistsDeezer()
+        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+
+        #dbArtists = dbArtistsRockCorner()
+        #dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
         #dbArtists = dbArtistsDatPiff()
         #dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
-        dbArtists = dbArtistsAceBootlegs()
-        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+        #dbArtists = dbArtistsAceBootlegs()
+        #dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
-        dbArtists = dbArtistsCDandLP()
-        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+        #dbArtists = dbArtistsCDandLP()
+        #dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
-        dbArtists = dbArtistsRateYourMusic()
-        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
-
-        dbArtists = dbArtistsMusicStack()
-        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+        #dbArtists = dbArtistsMusicStack()
+        #dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
 
         keys   = ["Disc", "Artists", "Artist", "Utils"]
