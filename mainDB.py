@@ -12,11 +12,12 @@ from dbArtistsCDandLP import dbArtistsCDandLP
 from dbArtistsRateYourMusic import dbArtistsRateYourMusic
 from dbArtistsMusicStack import dbArtistsMusicStack
 from dbArtistsDeezer import dbArtistsDeezer
+from dbArtistsAlbumOfTheYear import dbArtistsAlbumOfTheYear
 
 class musicDBs:
     def __init__(self):
         self.dbs = ["Discogs", "AllMusic", "MusicBrainz", "AceBootlegs", "RateYourMusic", "LastFM", "DatPiff", "RockCorner",
-                    "CDandLP", "MusicStack", "MetalStorm", "Deezer", "AppleMusic"]
+                    "CDandLP", "MusicStack", "MetalStorm", "Deezer", "AppleMusic", "AlbumOfTheYear"]
     
     def isValid(self, db):
         return db in self.dbs
@@ -77,6 +78,9 @@ class mainDB:
         dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
         
         dbArtists = dbArtistsDeezer()
+        dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
+        
+        dbArtists = dbArtistsAlbumOfTheYear()
         dbdata[dbArtists.db] = [dbArtists.disc, dbArtists, dbArtists.artist, dbArtists.dutils]
 
         #dbArtists = dbArtistsRockCorner()
