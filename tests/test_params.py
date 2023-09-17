@@ -1,0 +1,1 @@
+from dbmaster import MasterParamsdef test_params():    _ = MasterParams()
