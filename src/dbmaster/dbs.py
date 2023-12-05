@@ -17,7 +17,16 @@ class MasterDBs:
                     "MyMixTapez", "ClassicalArchives", "JioSaavn", "Napster",
                     "YouTubeMusic", "AppleMusic", "Wikidata", "Bandcamp",
                     "SpiritOfMetal", "RollDaBeats", "Petrucci"]
-#        self.others ["MusicVF", "DatPiff", "Soundcloud"]
+        self.dbs = ["AlbumOfTheYear", "AllMusic", "AppleMusic", "Bandcamp",
+                    "Beatport", "Deezer", "Discogs", "Genius", "JioSaavn",
+                    "LastFM", "MetalArchives", "MusicBrainz", "MyMixTapez",
+                    "Napster", "Petrucci", "RateYourMusic", "RollDaBeats",
+                    "SpiritOfMetal", "SetListFM", "Spotify", "Traxsource",
+                    "Wikidata", "YouTubeMusic"]
+        self.dbs += ["Gaana", "Petrucci", "ClassicalArchives", "Qobuz",
+                     "YesAsia"]
+        # "Petrucci", "ClassicalArchives"
+        # self.others ["MusicVF", "DatPiff", "Soundcloud"]
         self.valid = {db: True for db in self.dbs}
             
         self.dbTypeWeights = {"Trusted": 1,

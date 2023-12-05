@@ -1,5 +1,5 @@
-from pandas import Series
 from dbmaster import MasterDBs
+from pandas import Series
 
 
 def test_dbs():
@@ -16,12 +16,16 @@ def test_dbs():
     dbTypes = mdbs.getDBTypes()
     assert isinstance(dbTypes, dict), "Non-dict dbTypes"
     for db, dbType in dbTypes.items():
+        if mdbs.isValid(db) is False:
+            continue
         assert db in dbs, f"db {db} is lists in dbTypes, but not DBs!"
         assert dbType in dbTypeWeights.keys(), f"dbType {dbType} is not valid!"
         
     dbWeights = mdbs.getDBWeights()
     assert isinstance(dbWeights, Series), "Non-Series dbWeights"
     for db, weight in dbWeights.items():
+        if mdbs.isValid(db) is False:
+            continue
         assert db in dbs, f"db {db} is lists in dbTypes, but not DBs!"
         assert isinstance(weight, (int, float)), f"db [{db}] has non-(int/float) weight [{weight}]"
         

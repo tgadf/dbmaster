@@ -23,7 +23,7 @@ class MasterMetas:
         self.summaryTypes = {"Basic": ["Name", "Ref", "NumAlbums"],
                              "Counts": ["Counts"],
                              "Media": [f"{media}Media" for media in self.mediaTypes.values()],
-                             "Dates": ["Dates"], "Genre": ["Genre"],
+                             "Dates": ["Dates"], "Genre": ["Genre"], "Bio": ["Bio"],
                              "Metric": ["Metric"], "Link": ["Link"]}
         self.matchTypes = ["Name"] + [f"{media}Media" for media in self.mediaTypes.values()]
         self.matches = self.getMatches()
